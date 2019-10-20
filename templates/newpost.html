@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <a href="/">Home</a><br><br>
+
+    <h1 style='text-align:center;'>Create New Entry</h1>
+
+    <hr />
+
+    <form method='post'>
+        <label>
+            New Blog Entry:
+            <input type="text" name='title' placeholder="Blog Title" value='{{blog_title}}' />
+        </label>
+        <span class="error">{{title_error}}</span><br><br>
+        <label>
+            <textarea rows="20" cols="70" name='body' placeholder="Enter Text Here"> {{blog_body}}</textarea> 
+        </label>
+        <span class="error">{{body_error}}</span>
+        <input type="submit" value='Add Entry' />
+    </form>
+
+    <hr />
+
+{% endblock %}
