@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href='/index' style='margin-right: 15px;'>Home</a>
+    <a href='/newpost' style='margin-right: 15px;'>Create New Post</a>
+    <a href ='/signup'style='margin-right: 15px;'>Signup</a>
+    <a href ='/login'style='margin-right: 15px;'>Login</a>
+    
+
+    <h1 style="text-align: center;">Writing Sets the Soul Free</h1>
+
+    
+    <h2>Authors</h2>
+
+    <hr />
+    {% if users|length == 0 %}
+    <p>No users created yet</p>
+    {% else %}{% endif %}
+
+    <ul style="list-style: none;">
+        {% for user in users %}
+            <li><strong><a href='blogs?user={{user.id}}'>{{user.email}}</a></strong>
+                
+            </li>
+            <hr />
+            {% endfor %}
+    </ul>
+
+    
+{% endblock %}

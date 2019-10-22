@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <a href='/' style='margin-right: 15px;'>Home</a>
+    <a href='/index' style='margin-right: 15px;'>Home</a>
     <a href='/newpost'>Create New Post</a><br><br>
 
-    <h1 style="text-align: center;">Jessica's Blog</h1>
+    <h1 style="text-align: center;">Writing Sets the Soul Free</h1>
 
     {% if not myentry %}
     <h2>Blog Posts</h2>
@@ -16,7 +16,7 @@
 
     <ul style="list-style: none;">
         {% for blog in blogs %}
-            <li><strong><a href='./?id={{blog.id}}'>{{blog.name}}</a></strong>
+            <li><strong><a href='blogs?id={{blog.id}}'>{{blog.name}}</a></strong>
                 <br>{{blog.body}}
             </li>
             <hr />
